@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "AdBlock",
+    "version": "1.0",
+    "description": "Blocks ads, really",
+    "permissions": [
+      "tabs",
+      "alarms",
+      "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [{
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"]
+    }],
+    "web_accessible_resources": [{
+        "resources": ["your-gif.gif", "text.gif"],
+        "matches": ["<all_urls>"]
+    }],
+    "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+  }
+  
